@@ -9,11 +9,11 @@ spec:
       default: quay.io/jitesoft/alpine
     - name: scan-image
       description: Flag indicating that a scan should be performed
-      default: "false"
+      default: "true"
     - name: SKOPEO_IMAGE
       default: quay.io/containers/skopeo:v1.1.0
     - name: IMAGE_FROM_TLS_VERIFY
-      default: "false"
+      default: "true"
     - name: TRIVY_IMAGE
       default: quay.io/ibmgaragecloud/aquasec-trivy
   tasks:
