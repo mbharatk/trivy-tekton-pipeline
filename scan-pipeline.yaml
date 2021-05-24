@@ -1,0 +1,34 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: scan-pipeline
+spec:
+  params:
+    - name: image-url
+      description: "The location of image to scan on quay Container Registry <server>/<namespace>/<repository>:<tag>"
+      default: quay.io/jitesoft/alpine
+    - name: scan-image
+      description: Flag indicating that a scan should be performed
+      default: "false"
+    - name: SKOPEO_IMAGE
+      default: quay.io/containers/skopeo:v1.1.0
+    - name: IMAGE_FROM_TLS_VERIFY
+      default: "false"
+    - name: TRIVY_IMAGE
+      default: quay.io/ibmgaragecloud/aquasec-trivy
+  tasks:
+    - name: scan-image
+      taskRef:
+        name: img-scan-trivy
+      params:
+        - name: image-url
+          value: $(params.image-url)
+        - name: scan-image
+          value: $(params.scan-image)
+        - name: SKOPEO_IMAGE
+          value: $(params.SKOPEO_IMAGE)
+        - name: IMAGE_FROM_TLS_VERIFY
+          value: $(params.IMAGE_FROM_TLS_VERIFY)
+        - name: TRIVY_IMAGE
+          value: $(params.TRIVY_IMAGE)
+        

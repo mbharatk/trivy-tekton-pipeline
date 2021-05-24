@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: scan-pipelinerun
+spec:
+  pipelineRef:
+    name: scan-pipeline
+  
+  params:
+  - name: image-url
+    value:  quay.io/jitesoft/alpine
+  - name: scan-image
+    value: "true"
+  - name: SKOPEO_IMAGE
+    value: quay.io/containers/skopeo:v1.1.0
+  - name: IMAGE_FROM_TLS_VERIFY
+    value: "true"
+  - name: TRIVY_IMAGE
+    value: quay.io/ibmgaragecloud/aquasec-trivy
+        
