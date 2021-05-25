@@ -8,7 +8,7 @@ spec:
   
   params:
   - name: image-url
-    value:  quay.io/jitesoft/alpine
+    value:  ""
   - name: scan-image
     value: "true"
   - name: SKOPEO_IMAGE
