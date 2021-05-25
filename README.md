@@ -2,6 +2,15 @@
 
 This repository contains a task that uses [trivy](https://github.com/aquasecurity/trivy) tool for detecting vulnerabilities present in an container image. With this task we can scan a registry which contains an image for vulnerabilities.
 
+#### Set up a cluster using minikube by doing a `minikube start`
+
+# Set up Tekton
+Install tekton with the foloowing command after setting up the cluster
+
+`kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml`
+
+This will install all the necessary tekton components to get started
+
 # Installing the Task
 `kubectl apply -f https://raw.githubusercontent.com/mbharatk/trivy-tekton-pipeline/main/task/img-scan-task.yaml`
 
