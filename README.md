@@ -21,6 +21,6 @@ and all the other values are same as mentioned in the pipeline.
 
 Once done, check the logs using the following command:
 
-     tkn pipelinerun logs <name-of-the-pipelinerun>
+`tkn pipelinerun logs <name-of-the-pipelinerun>`
 
   
