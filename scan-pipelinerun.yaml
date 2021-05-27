@@ -9,8 +9,6 @@ spec:
   params:
   - name: image-url
     value:  ""
-  - name: scan-image
-    value: "true"
   - name: SKOPEO_IMAGE
     value: quay.io/containers/skopeo:v1.1.0
   - name: IMAGE_FROM_TLS_VERIFY
