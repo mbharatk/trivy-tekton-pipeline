@@ -14,5 +14,5 @@ spec:
   - name: IMAGE_FROM_TLS_VERIFY
     value: "true"
   - name: TRIVY_IMAGE
-    value: quay.io/ibmgaragecloud/aquasec-trivy
+    value: docker.io/aquasec/trivy
         
