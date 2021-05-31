@@ -5,14 +5,14 @@ metadata:
 spec:
   params:
     - name: image-url
-      description: "The location of image to scan on quay Container Registry <server>/<namespace>/<repository>:<tag>"
+      description: "The location of image to scan on Container Registry <server>/<namespace>/<repository>:<tag>"
       default: ""
     - name: SKOPEO_IMAGE
       default: quay.io/containers/skopeo:v1.1.0
     - name: IMAGE_FROM_TLS_VERIFY
       default: "true"
     - name: TRIVY_IMAGE
-      default: quay.io/ibmgaragecloud/aquasec-trivy
+      default: docker.io/aquasec/trivy
   tasks:
     - name: scan-image
       taskRef:
